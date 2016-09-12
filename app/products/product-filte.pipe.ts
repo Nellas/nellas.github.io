@@ -1,6 +1,6 @@
 import { PipeTransform, Pipe } from 'angular2/core'
 import { IProduct } from './product'
-import {Injectable} from "angular2/src/core/di/decorators";
+import { Injectable } from "angular2/src/core/di/decorators";
 
 @Pipe({
     name: 'productFilter'
