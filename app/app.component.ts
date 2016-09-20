@@ -3,41 +3,25 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import 'rxjs/Rx';  // load the full set of observable operators
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router'
 
-import { ProductListComponent } from './products/product-list.component';
-import { ProductService } from './products/product.service'
-import { WelcomeComponent } from "./home/welcome.component";
-import { ProductDetailComponent } from './products/product-detail.component'
+import { AboutMeComponent } from './about_me/about_me.component';
+import { DevelopmentComponent } from './development/development.component'
+import { HomeComponent } from "./home/home.component";
 
 
 @Component({
-    selector: 'pm-app',
-    template:`
-    <div>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <a class="navbar-brand">{{pageTitle}}</a>
-                <ul class="nav navbar-nav">
-                    <li><a [routerLink]="['Welcome']">Home</a></li>
-                    <li><a [routerLink]="['Products']">Product List</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
-    `,
+    selector: 'nellas-app',
+    templateUrl: 'app/app.component.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ProductService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+    providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 
 @RouteConfig([
-    { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },
-    { path: '/products', name: 'Products', component: ProductListComponent },
-    { path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent }
+    { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
+    { path: '/about-me', name: 'AboutMe', component: AboutMeComponent },
+    { path: '/development', name: 'Development', component: DevelopmentComponent }
 ])
 
 export class AppComponent {
-    pageTitle: string = 'Acme Product Management'
+    pageTitle: string = 'Nellas dot Me'
 
 }

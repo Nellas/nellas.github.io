@@ -1,7 +1,59 @@
-li {
-    font-size: large;
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+* {
+    box-sizing: border-box;
 }
 
-div.panel-heading {
-   font-size: x-large; 
+.name-container {
+    width: 80%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 10%;
+    font-size: 54px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.1;
+}
+
+
+
+.name-container h1 {
+    font-size: 44px;
+}
+
+.light-text {
+    color: rgba(0,0,0,.44);
+}
+
+.home-link,
+.home-link:link,
+.home-link:visited,
+.home-link:hover,
+.home-link:focus,
+.home-link:active {
+    font-size: 44px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgba(0,0,0,.8);
+}
+
+.nav-bar {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-element {
+    padding: 10px;
+}
+
+.nav-link,
+.nav-linl:link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    color: rgba(0, 0, 0, .44);
+    font-size: 18px;
+    text-decoration: none;
 }

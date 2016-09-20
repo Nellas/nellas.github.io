@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/src/core/di/decorators"], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,37 +10,38 @@ System.register(['angular2/core', "angular2/src/core/di/decorators"], function(e
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, decorators_1;
-    var ProductFilterPipe;
+    var core_1, router_1;
+    var DevelopmentComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (decorators_1_1) {
-                decorators_1 = decorators_1_1;
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
-            ProductFilterPipe = (function () {
-                function ProductFilterPipe() {
+            DevelopmentComponent = (function () {
+                // add services to contructor
+                function DevelopmentComponent() {
+                    this.pageTitle = 'Development Content';
                 }
-                ProductFilterPipe.prototype.transform = function (value, args) {
-                    var filter = args[0] ? args[0].toLocaleLowerCase() : null;
-                    return filter ? value.filter(function (product) {
-                        return product.productName.toLocaleLowerCase().indexOf(filter) != -1;
-                    }) : value;
+                DevelopmentComponent.prototype.ngOnInit = function () {
+                    // console.log('hello development init')
                 };
-                ProductFilterPipe = __decorate([
-                    core_1.Pipe({
-                        name: 'productFilter'
-                    }),
-                    decorators_1.Injectable(), 
+                DevelopmentComponent = __decorate([
+                    core_1.Component({
+                        templateUrl: 'app/development/development.component.html',
+                        styleUrls: ['app/development/development.component.css'],
+                        pipes: [],
+                        directives: [router_1.ROUTER_DIRECTIVES]
+                    }), 
                     __metadata('design:paramtypes', [])
-                ], ProductFilterPipe);
-                return ProductFilterPipe;
+                ], DevelopmentComponent);
+                return DevelopmentComponent;
             }());
-            exports_1("ProductFilterPipe", ProductFilterPipe);
+            exports_1("DevelopmentComponent", DevelopmentComponent);
         }
     }
 });
-//# sourceMappingURL=product-filte.pipe.js.map
+//# sourceMappingURL=development.component.js.map

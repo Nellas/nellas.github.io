@@ -1,8 +1,8 @@
 {
-    "name": "product-management",
+    "name": "personal-site",
     "version": "1.0.0",
-    "author": "Deborah Kurata",
-    "description": "Package for the Acme Product Management sample application",
+    "author": "Luke Engelhardt",
+    "description": "Personal site using Angular 2",
     "scripts": {
         "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
         "tsc": "tsc",
